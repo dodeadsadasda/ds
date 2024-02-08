@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("หมาขาว HUB", "DarkTheme")
+local Window = Library.CreateLib("หมาขาว HUB", "Midnight")
 local Tab = Window:NewTab("คนสร้าง")
 local Section = Tab:NewSection("BYหมาขาว")
 local Tab = Window:NewTab("ฟาม")
