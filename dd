@@ -108,3 +108,58 @@ end
 
     end
 end)
+
+
+Section:NewToggle("auto sell Watermelonjuice", "auto sell Watermelonjuice", function(state)
+    if state then
+        local isOpen = true
+
+while true do
+    if isOpen then
+        local args = {
+            [1] = "Watermelonjuice",
+            [2] = "1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        
+    else
+        local args = {
+            [1] = "Watermelonjuice",
+            [2] = "1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        
+    end
+    isOpen = not isOpen  -- Toggle the state between open and close
+    wait(.1) -- Adjust the delay as needed
+end
+
+    else
+        local isOpen = false
+
+while true do
+    if isOpen then
+        local args = {
+            [1] = "Watermelonjuice",
+            [2] = "1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        
+    else
+        local args = {
+            [1] = "Watermelonjuice",
+            [2] = "1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        
+    end
+    isOpen = not isOpen  -- Toggle the state between open and close
+    wait(.1) -- Adjust the delay as needed
+end
+
+    end
+end)
