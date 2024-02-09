@@ -58,6 +58,18 @@ Section:NewButton("ขายแตงโม", "ขายแตงโม", functi
     
 end)
 
+Section:NewButton("ซิ้อน้ำ100ชิ้น", "กกก", function()
+    local args = {
+        [1] = "checkout_cash",
+        [2] = {
+            ["warter"] = 100
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("shopEvent"):FireServer(unpack(args))
+    
+end)
+
 Section:NewToggle("auto cooking Watermelonjuice", "cooking", function(state)
     if state then
         local args = {
