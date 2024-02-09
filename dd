@@ -16,7 +16,7 @@ Section:NewToggle("แตงโม", "แตงโม", function(state)
         end
         end
     else
-        _G.bringmob = true --ปิด=false  เปิด=true
+        _G.bringmob = false --ปิด=false  เปิด=true
         while _G.bringmob do wait()
         for i,v in pairs(game:GetService("Workspace").Farm.Watermelon:GetDescendants()) do
              if v.Name == "Sound" then
