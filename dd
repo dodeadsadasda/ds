@@ -58,91 +58,66 @@ Section:NewButton("ขายแตงโม", "ขายแตงโม", functi
     
 end)
 
-Section:NewToggle("auto cooking", "cooking", function(state)
+Section:NewToggle("auto cooking Watermelonjuice", "cooking", function(state)
     if state then
-        _G.bringmob = true --ปิด=false  เปิด=true
-        while _G.bringmob do wait()
-        local args = {
-             [1] = "Watermelonjuice",
-             [2] = "1"
-         }
-         
-         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))
-         wait(.1)
-        end
-        end
-        end
-    else
-
-        _G.bringmob = false --ปิด=false  เปิด=true
-        while _G.bringmob do wait()
-        local args = {
-             [1] = "Watermelonjuice",
-             [2] = "1"
-         }
-         
-         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))
-         wait(.1)
-        end
-        end
-        end
-end)
-
-    else
-        local isOpen = false
-
-while true do
-    if isOpen then
         local args = {
             [1] = "Watermelonjuice",
             [2] = "1"
         }
         
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))
-        isOpen = false
+        while true do
+
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        wait(0.5) 
+
+    end
+
     else
+
         local args = {
             [1] = "Watermelonjuice",
             [2] = "1"
         }
         
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))    
-        isOpen = true
-    end
-    wait(.1)
-end
+        while true do
 
+        game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        wait(0.5) 
+
+    end
     end
 end)
-
 
 Section:NewToggle("auto sell Watermelonjuice", "auto sell Watermelonjuice", function(state)
     if state then
-        _G.bringmob = true --ปิด=false  เปิด=true
-        while _G.bringmob do wait()
         local args = {
-             [1] = "Watermelonjuice",
-             [2] = "1"
-         }
-         
-         game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-         wait(.1)
+            [1] = "Watermelonjuice",
+            [2] = "1"
+        }
+        
+        
+        while true do
+        
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))
+            
+            wait(0.5) 
         end
-        end
-        end
+        
 
     else
 
-        _G.bringmob = false --ปิด=false  เปิด=true
-        while _G.bringmob do wait()
-        local args = {
-             [1] = "Watermelonjuice",
-             [2] = "1"
-         }
-         game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-         wait(.1)
-        end
-        end
-        end
+local args = {
+    [1] = "Watermelonjuice",
+    [2] = "1"
+}
+
+
+while true do
+
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("cookingEvent"):FireServer(unpack(args))
+    
+    wait(0.5) 
+end
+
     end
 end)
