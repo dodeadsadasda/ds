@@ -60,10 +60,6 @@ end)
 
 Section:NewToggle("auto cooking", "cooking", function(state)
     if state then
-        local isOpen = true
-
-while true do
-    if isOpen then
         _G.bringmob = true --ปิด=false  เปิด=true
         while _G.bringmob do wait()
         local args = {
@@ -76,7 +72,6 @@ while true do
         end
         end
         end
-
     else
 
         _G.bringmob = false --ปิด=false  เปิด=true
@@ -91,7 +86,7 @@ while true do
         end
         end
         end
-end
+end)
 
     else
         local isOpen = false
@@ -129,24 +124,25 @@ Section:NewToggle("auto sell Watermelonjuice", "auto sell Watermelonjuice", func
              [1] = "Watermelonjuice",
              [2] = "1"
          }
-         wait(.1)
+         
          game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         wait(.1)
         end
         end
         end
 
     else
+
         _G.bringmob = false --ปิด=false  เปิด=true
         while _G.bringmob do wait()
         local args = {
              [1] = "Watermelonjuice",
              [2] = "1"
          }
-         wait(.1)
          game:GetService("ReplicatedStorage"):WaitForChild("WorldMarket_Remotes"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         wait(.1)
         end
         end
         end
     end
-
 end)
