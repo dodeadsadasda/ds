@@ -6,25 +6,25 @@ local Tab = Window:NewTab("ฟาม")
 local Section = Tab:NewSection("ฟาม")
 Section:NewToggle("แตงโม", "แตงโม", function(state)
     if state then
-        _G.loop = true; --ปิด=false  เปิด=true
-while _G.loop do wait()
-for i,v in pairs(game:GetService("Workspace").Farm.Watermelon:GetDescendants()) do
-     if v.Name == "TouchInterest" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.2)
-     end
-    end
-end
+        _G.bringmob = true --ปิด=false  เปิด=true
+        while _G.bringmob do wait()
+        for i,v in pairs(game:GetService("Workspace").Farm.Watermelon:GetDescendants()) do
+             if v.Name == "Sound" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+        wait(.1)
+             end 
+        end
+        end
     else
-        _G.loop = false;
-while _G.loop do wait()
-for i,v in pairs(game:GetService("Workspace").Farm.Watermelon:GetDescendants()) do
-     if v.Name == "TouchInterest" then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.2)
-     end
-    end
-end
+        _G.bringmob = true --ปิด=false  เปิด=true
+        while _G.bringmob do wait()
+        for i,v in pairs(game:GetService("Workspace").Farm.Watermelon:GetDescendants()) do
+             if v.Name == "Sound" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+        wait(.1)
+             end 
+        end
+        end
     end
 end)
 
