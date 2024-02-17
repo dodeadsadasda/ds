@@ -58,7 +58,7 @@ Section:NewButton("ขายแตงโม", "ขายแตงโม", functi
     
 end)
 
-Section:NewButton("ซิ้อน้ำ100ชิ้น", "กกก", function()
+Section:NewButton("ซิ้อน้ำ100ขวด", "ก", function()
     local args = {
         [1] = "checkout_cash",
         [2] = {
@@ -132,4 +132,26 @@ while true do
 end
 
     end
+end)
+local Tab = Window:NewTab("Tp Player")
+local Section = Tab:NewSection("Select Player!")
+Plr = {}
+for i,v in pairs(game:GetService("Tp Players"):GetChildren()) do
+    table.insert(Plr,v.Name) 
+end
+local drop = Section:NewDropdown("Select Player!", "Click To Select", Plr, function(t)
+   PlayerTP = t
+end)
+Section:NewButton("Click To TP", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
+end)
+Section:NewToggle("Auto Tp", "", function(t)
+_G.TPPlayer = t
+while _G.TPPlayer do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
+end
+end)
+
+Section:NewButton("Refresh Dropdown","Refresh Dropdown", function()
+  drop:Refresh(Plr)
 end)
