@@ -133,10 +133,10 @@ end
 
     end
 end)
-local Tab = Window:NewTab("Tp Player")
+local Tab = Window:NewTab("Player")
 local Section = Tab:NewSection("Select Player!")
 Plr = {}
-for i,v in pairs(game:GetService("Tp Players"):GetChildren()) do
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Plr,v.Name) 
 end
 local drop = Section:NewDropdown("Select Player!", "Click To Select", Plr, function(t)
@@ -152,6 +152,3 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Player
 end
 end)
 
-Section:NewButton("Refresh Dropdown","Refresh Dropdown", function()
-  drop:Refresh(Plr)
-end)
